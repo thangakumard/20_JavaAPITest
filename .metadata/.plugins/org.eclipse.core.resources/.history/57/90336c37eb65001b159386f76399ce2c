@@ -1,9 +1,0 @@
-package api_test;
-
-public class TestUsersApi {
-
-	
-	public void testGetUsers() {
-		RequestSpecHelper.GetRequest("users");
-	}
-}
