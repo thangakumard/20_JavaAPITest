@@ -1,0 +1,26 @@
+package api_test;
+
+import com.gargoylesoftware.htmlunit.javascript.host.Map;
+
+import io.restassured.RestAssured;
+import io.restassured.builder.*;
+import io.restassured.http.ContentType;
+import io.restassured.specification.*;
+
+public class RequestSpecHelper {
+	
+	public static RequestSpecification request = null;
+
+	public RequestSpecHelper() {
+		
+		RequestSpecBuilder requestSpecBuilder = new RequestSpecBuilder();
+		requestSpecBuilder.setBasePath("http://localhost:3000/");
+		requestSpecBuilder.setContentType(ContentType.JSON);
+		RequestSpecification requestSpec = requestSpecBuilder.build();
+		request = RestAssured.given().spec(requestSpec);
+	}
+	
+	public static void GetRequestWithPathParam(String url,Map<String, String> pathParam) {
+		
+	}
+}
