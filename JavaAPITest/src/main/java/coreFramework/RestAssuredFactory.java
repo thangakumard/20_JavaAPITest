@@ -2,8 +2,6 @@ package coreFramework;
 
 import java.util.Map;
 
-import org.apache.http.client.methods.RequestBuilder;
-
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
@@ -22,7 +20,7 @@ public class RestAssuredFactory {
 	public RestAssuredFactory(String uri, String method, String token) {
 		this.url = "http://localhost:3000" + uri;
 		this.method = method;
-		
+				
 		if(token != null && !token.isEmpty()) {
 			builder.addHeader("Authorization", "Bearer " + token);
 		}	
